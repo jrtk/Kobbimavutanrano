@@ -1,0 +1,18 @@
+So, I need to build the cost volume which is used to calculate the disparity.
+
+1. Build Cost Volume.
+2. Apply the Cost Aggregation. Below is the understanding
+	Cost aggregation aims to smooth the cost volume while representing these natural variations in disparity. 
+   
+	Cost Aggregation with These Considerations:
+	Smoothing with Care: Cost aggregation (such as using 3D convolutions) helps smooth the cost volume, which is beneficial in regions where disparities should be similar. However, the aggregation process must also be careful not to overly smooth areas where there are actual depth discontinuities.
+
+	Balancing Act: The goal of cost aggregation is to find a balance between enforcing smoothness where it makes sense (e.g., on smooth surfaces) and preserving sharp changes in disparity where they occur naturally (e.g., at object edges).
+
+Neighboring pixels often have similar disparities, particularly on smooth surfaces.
+However, sharp changes in disparity occur at object boundaries and in occluded areas.
+Cost aggregation aims to smooth the cost volume while respecting these natural variations in disparity.
+
+
+
+
